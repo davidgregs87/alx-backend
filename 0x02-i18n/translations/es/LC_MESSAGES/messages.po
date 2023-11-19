@@ -1,4 +1,4 @@
-# English translations for PROJECT.
+# Spanish translations for PROJECT.
 # Copyright (C) 2023 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
@@ -7,29 +7,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-11-18 11:46+0100\n"
-"PO-Revision-Date: 2023-11-18 11:47+0100\n"
+"POT-Creation-Date: 2023-11-18 11:59+0100\n"
+"PO-Revision-Date: 2023-11-18 12:00+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: en\n"
-"Language-Team: en <LL@li.org>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.13.1\n"
 
-#: templates/3-index.html:11
+#: templates/4-index.html:6
 msgid "home_title"
-msgstr Welcome to Holberton""
+msgstr "Bienvenido a holberton"
 
+#: templates/4-index.html:11
 msgid "home_header"
-msgstr "Hello world!"
+msgstr "Hola Mundo"
 
 msgid "logged_in_as"
-msgstr "You are logged in as %(username)s."
+msgstr "Has iniciado sesión como %(username)s."
 
 msgid "not_logged_in"
-msgstr "You are not logged in."
+msgstr "Usted no se ha identificado."
 
 msgid "current_time_is"
-msgstr "The current time is %(current_time)s."
+msgstr "La hora actual es %(current_time)s."

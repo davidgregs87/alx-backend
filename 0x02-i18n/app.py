@@ -6,13 +6,17 @@ A flask module
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
 from pytz import timezone, UnknownTimeZoneError
+from datetime import datetime
+from babel.dates import format_datetime
 
 
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
     2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
-    3: {"name": "Spock", "locale": "es", "timezone": "Vulcan"},
-    4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
+    3: {"name": "Spock", "locale": "es", "timezone": "Europe/Madrid"},
+    4: {"name": "Teletubby", "locale": 'de', "timezone": "Europe/Amsterdam"},
+    5: {"name": "Dgregs", "locale": 'zh', "timezone": "Europe/Beijing"},
+    6: {"name": "NSK", "locale": 'en', "timezone": "Africa/Lagos"},
 }
 
 
@@ -49,6 +53,7 @@ def get_locale():
 
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
+
 @babel.timezoneselector
 def get_timezone():
     """
@@ -68,7 +73,9 @@ def home():
     """
     New home route
     """
-    return render_template('7-index.html')
+    current_time = datetime.now(timezone(get_timezone()))
+    formatted_time = format_datetime(current_time, 'medium', locale=get_locale())
+    return render_template('index.html', new_time=formatted_time)
 
 
 def get_user() -> dict | None:
